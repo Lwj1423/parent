@@ -1,7 +1,8 @@
-package SparseArray;
+package LinkedList;
 
 /**
- * 定义HeroNode,每个heroNode 对象就是一个节点
+ * 3. 单链表
+ *          定义HeroNode,每个heroNode 对象就是一个节点
  */
 public class SingleLinkedListDemo {
 
@@ -32,9 +33,21 @@ public class SingleLinkedListDemo {
         linkedList.update(newHeroNode);
         linkedList.list();
 
+        //删除节点
         linkedList.delete(2);
-        System.out.println(9);
+        System.out.println();
         linkedList.list();
+
+        //面试题01:
+        //      求单链表中有效节点的个数
+        int length = SingleLinkedList.getLength(linkedList.getHead());
+        System.out.println("链表的长度为:"+length);
+
+        //     02: 查找单链表中倒数第k个结点
+        HeroNode lastIndexNode = SingleLinkedList.findLastIndexNode(linkedList.getHead(), 1);
+        System.out.println(lastIndexNode);
+
+
     }
 
 
@@ -45,6 +58,48 @@ public class SingleLinkedListDemo {
 class SingleLinkedList{
     //01.先定义一个头节点,头节点不能动,不存放具体数据
     private HeroNode head = new HeroNode(0,"","");
+
+    //获取头节点信息
+    public HeroNode getHead() {
+        return head;
+    }
+    //面试02: 查找单链表中倒数第k个结点
+    //思路:
+    // 1. 编写一个方法，接收head节点，同时接收一个index
+    // 2. index 表示是倒数第index个节点
+    // 3. 先把链表从头到尾遍历，得到链表的总的长度 getLength
+    // 4. 得到size 后，我们从链表的第一个开始遍历 (size-index)个，就可以得到
+    // 5. 如果找到了，则返回该节点，否则返回nulll
+    public static HeroNode findLastIndexNode(HeroNode head,int index){
+        if (head.next == null){
+            return null;  //空链表
+        }
+        //获取链表长度
+        int length = getLength(head);
+        //第二次遍历前 判断
+        if (index <= 0 || index > length){
+            return  null;
+        }
+        HeroNode temp = head.next;  //temp指向第一个
+        for (int i = 0; i < length - index;i++){
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    //面试01: 获取单链表中有效节点的个数
+    public  static int getLength(HeroNode head){
+        if (head.next == null){
+            return 0;  //空链表
+        }
+        int length = 0;
+        HeroNode temp = head.next;
+        while (temp != null){
+            length++;
+            temp = temp.next;
+        }
+        return length;
+    }
 
     //02.添加节点到单向链表尾部
     /**
@@ -120,7 +175,7 @@ class SingleLinkedList{
                 flag = true;
                 break;
             }
-            temp = temp.next;
+            temp = temp.next;//相当于遍历链表
         }
 
         if (flag){
@@ -148,7 +203,7 @@ class SingleLinkedList{
                 flag = true;
                 break;
             }
-            temp = temp.next;
+            temp = temp.next; //相当于遍历链表
         }
         if (flag){
             temp.next = temp.next.next;
