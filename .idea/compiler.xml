@@ -9,6 +9,7 @@
         <module name="child3" />
         <module name="child2" />
         <module name="child1" />
+        <module name="dateStruct" />
         <module name="javaBase" />
       </profile>
     </annotationProcessing>
