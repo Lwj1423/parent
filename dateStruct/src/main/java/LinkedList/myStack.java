@@ -10,14 +10,9 @@ public class myStack {
     public static void main(String[] args) {
         Stack<String> stack = new Stack<>();
         //入栈
-        stack.add("a");
-        stack.add("b");
-        stack.add("c");
-        stack.push("e");
+        int [] arr = new int[3];
+        arr[0] = '1';
 
-        //出栈
-        while (stack.size() > 0){
-            System.out.println(stack.pop());
-        }
+        System.out.println(arr[0]);
     }
 }
