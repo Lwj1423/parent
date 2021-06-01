@@ -2,12 +2,27 @@ package mainUtil;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
  * 日期类，
  */
 public class DateTest {
+
+    public static void main(String[] args) {
+        String date = getDate();
+        System.out.println(date);
+
+        getTime();
+    }
+
+    public static void getTime() {
+        LocalDateTime dateTime = LocalDateTime.now();
+        DateTimeFormatter ofForMat = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+        System.out.println(ofForMat.format(dateTime));
+    }
 
     //获取当前日期
     public static String getDate(){
