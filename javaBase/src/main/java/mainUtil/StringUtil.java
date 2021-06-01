@@ -4,6 +4,16 @@ package mainUtil;
  * 自定义String方法
  */
 public class StringUtil {
+
+    public static void main(String[] args) {
+        String str = "aaabbbccc";
+        String substring = str.substring(2, 4);
+        System.out.println(substring);
+
+        String reverse = reverse(str, 2, 6);
+        System.out.println(reverse);
+
+    }
     /**
      * 将字符串指定位置进行反转
      * @param str
