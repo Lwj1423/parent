@@ -1,5 +1,7 @@
 package sort;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 /**
@@ -8,8 +10,24 @@ import java.util.Arrays;
 public class InsertSort {
 
     public static void main(String[] args) {
-        int[] arr = {1,2,4,3,7,9,6,5,2};
-        insertSort(arr);
+        /*int[] arr = {1,2,4,3,7,9,6,5,2};
+        insertSort(arr);*/
+
+        int[] testarr = new int[80000];
+        for (int i = 0; i < 80000; i++) {
+            testarr[i] = (int) (Math.random() * 80000);
+        }
+        //创建时间
+        LocalDateTime now1 = LocalDateTime.now();
+        DateTimeFormatter ofPattern = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+        String format = ofPattern.format(now1);
+        System.out.println("排序前的时间是=" + now1);
+
+        insertSort(testarr);
+
+        LocalDateTime now2 = LocalDateTime.now();
+        String format2 = ofPattern.format(now2);
+        System.out.println("排序后的时间=" + now2);
 
     }
 
@@ -39,8 +57,8 @@ public class InsertSort {
             //将前一个数 替换为带插入数
             arr[insertIndex + 1] = insertVal;
 
-            System.out.println("第"+i+"轮插入");
-            System.out.println(Arrays.toString(arr));
+            /*System.out.println("第"+i+"轮插入");
+            System.out.println(Arrays.toString(arr));*/
         }
     }
 }
