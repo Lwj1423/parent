@@ -9,6 +9,7 @@ class SeasonTest{
 /**
  * 创建枚举方式一
  */
+
 public class Season {
     //1.声明Season对象属性
     private final String seasonName;
