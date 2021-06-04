@@ -17,7 +17,7 @@ public class DateTest {
 
         getTime();
     }
-
+    //新特性
     public static void getTime() {
         LocalDateTime dateTime = LocalDateTime.now();
         DateTimeFormatter ofForMat = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
