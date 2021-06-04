@@ -6,6 +6,7 @@ package search;
  */
 public class SeqSearch {
 
+
     public static void main(String[] args) {
         int[] arr = {1,2,4,5,3};
         int index = seqSearch(arr,3);
