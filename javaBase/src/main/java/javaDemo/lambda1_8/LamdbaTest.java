@@ -7,6 +7,7 @@ import java.util.Comparator;
 /**
  * Lambda 表达式 练习
  */
+
 public class LamdbaTest {
 
    //语句输出
