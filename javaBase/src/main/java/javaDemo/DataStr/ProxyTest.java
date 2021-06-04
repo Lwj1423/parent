@@ -9,6 +9,7 @@ import java.lang.reflect.Proxy;
  * 
  */
 
+
 //定义规范
 interface Human{
 
