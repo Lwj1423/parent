@@ -5,6 +5,7 @@ import java.io.*;
 /**
  * 缓冲流 :视频   加密  解密
  */
+
 public class BufferedTest {
 
     public static void main(String[] args) {
