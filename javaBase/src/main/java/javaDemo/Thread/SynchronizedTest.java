@@ -3,6 +3,7 @@ package javaDemo.Thread;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
+ *
  * 线程安全三种方式
  * 模拟卖票   实现Runnable    同步方法
  *      问题: 卖票过程中,出现了重票、错票  线程安全问题
