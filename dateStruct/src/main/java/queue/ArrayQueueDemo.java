@@ -7,7 +7,6 @@ import java.util.Scanner;
 /**
  * 2.  队列
  *       使用数组模拟队列
- *
  */
 public class ArrayQueueDemo {
 
