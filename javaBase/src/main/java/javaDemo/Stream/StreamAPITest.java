@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 /**
  * stream实例化
  */
+
 public class StreamAPITest {
 
     //方式一 :  通过集合
